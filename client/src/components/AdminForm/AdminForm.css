@@ -1,0 +1,9 @@
+.admin-form {
+  margin-top: 10px;
+}
+
+.question-option {
+  display: flex;
+  align-items: "center";
+  margin-top: 13px;
+}

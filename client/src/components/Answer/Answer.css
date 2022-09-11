@@ -1,0 +1,8 @@
+.answer {
+  height: 45px;
+  cursor: pointer;
+}
+.option {
+  color: white;
+  background-color: rgb(39, 127, 178);
+}

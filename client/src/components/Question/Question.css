@@ -1,0 +1,10 @@
+.question {
+  width: 75%;
+}
+
+.button {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 16px;
+}

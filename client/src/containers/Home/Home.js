@@ -17,9 +17,11 @@ const Home = () => {
   const [answers, setAnswers] = useState([]);
   const [showResult, setShowResult] = useState(false);
 
-  const publishedQuestions = questions.filter(
-    (each) => each.published === true
-  );
+  let publishedQuestions = [];
+
+  if (questions) {
+    publishedQuestions = questions.filter((each) => each.published === true);
+  }
 
   useEffect(() => {
     let extrovert = 0;

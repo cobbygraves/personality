@@ -91,59 +91,60 @@ const Admin = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {questions.map((eachData) => (
-            <TableRow
-              key={eachData.id}
-              sx={{
-                "&:last-child td, &:last-child th": { border: 0 },
-              }}
-            >
-              <TableCell component="th" scope="row">
-                {eachData.question.substring(0, 75) + "..."}
-              </TableCell>
-              <TableCell
-                align="right"
-                sx={{ display: "flex", alignItems: "center" }}
+          {questions &&
+            questions.map((eachData) => (
+              <TableRow
+                key={eachData.id}
+                sx={{
+                  "&:last-child td, &:last-child th": { border: 0 },
+                }}
               >
-                {eachData.published ? (
-                  <Button
-                    variant="text"
-                    size="small"
-                    onClick={() => publishHandler(eachData.id)}
-                    sx={{ background: "#dff478", cursor: "pointer" }}
-                  >
-                    unplish
-                  </Button>
-                ) : (
-                  <Button
-                    variant="text"
-                    size="small"
-                    onClick={() => publishHandler(eachData.id)}
-                    sx={{ background: "#88f388", cursor: "pointer" }}
-                  >
-                    publish
-                  </Button>
-                )}
-                <DeleteIcon
-                  sx={{
-                    color: "red",
-                    cursor: "pointer",
-                    margin: "0px 10px",
-                  }}
-                  onClick={() => deleteHandler(eachData.id)}
-                />
-                <EditIcon
-                  sx={{
-                    color: "primary.main",
-                    background: "#ccc",
-                    cursor: "pointer",
-                    padding: 0.4,
-                  }}
-                  onClick={() => editHandler(eachData.id)}
-                />
-              </TableCell>
-            </TableRow>
-          ))}
+                <TableCell component="th" scope="row">
+                  {eachData.question.substring(0, 75) + "..."}
+                </TableCell>
+                <TableCell
+                  align="right"
+                  sx={{ display: "flex", alignItems: "center" }}
+                >
+                  {eachData.published ? (
+                    <Button
+                      variant="text"
+                      size="small"
+                      onClick={() => publishHandler(eachData.id)}
+                      sx={{ background: "#dff478", cursor: "pointer" }}
+                    >
+                      unplish
+                    </Button>
+                  ) : (
+                    <Button
+                      variant="text"
+                      size="small"
+                      onClick={() => publishHandler(eachData.id)}
+                      sx={{ background: "#88f388", cursor: "pointer" }}
+                    >
+                      publish
+                    </Button>
+                  )}
+                  <DeleteIcon
+                    sx={{
+                      color: "red",
+                      cursor: "pointer",
+                      margin: "0px 10px",
+                    }}
+                    onClick={() => deleteHandler(eachData.id)}
+                  />
+                  <EditIcon
+                    sx={{
+                      color: "primary.main",
+                      background: "#ccc",
+                      cursor: "pointer",
+                      padding: 0.4,
+                    }}
+                    onClick={() => editHandler(eachData.id)}
+                  />
+                </TableCell>
+              </TableRow>
+            ))}
         </TableBody>
       </Table>
     </TableContainer>
